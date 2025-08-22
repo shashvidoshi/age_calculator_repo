@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Age Calculator</h1>
+        <form method="POST">
+            <label for="dob">Enter your Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if age %}
+            <div class="result">
+                <h3>You are {{ age[0] }} years, {{ age[1] }} months, and {{ age[2] }} days old.</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
